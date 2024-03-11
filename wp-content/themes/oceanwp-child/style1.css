@@ -1,0 +1,156 @@
+/*
+Theme Name: OceanWP Child Theme
+Theme URI: https://oceanwp.org/
+Description: OceanWP WordPress theme. Sample child theme.
+Author: OceanWP
+Author URI: https://oceanwp.org/
+Template: oceanwp
+Version: 1.0
+*/
+
+/* ______________TESTS______________ */
+/* html, body {
+    background-color: yellow;
+} */
+/* li.menu-item-18 {
+   background-color: yellow;
+} */
+/* #footer-widgets {
+    padding: 0;
+} */
+/* .logo {
+    font-size: 19px;
+    font-weight: 800;
+    font-family: Syne;
+    color: #DC9F96;
+} */
+/* ______________FIN-TESTS______________ */
+
+
+/* ______________COURS______________ */
+/* HEADER */
+/* #site-header.sticky-top {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    background-color: #C8D6CF;
+ }
+  li.menu-item a {
+    color: #313332 !important;
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #F4CA52;
+    border-radius: 10px;
+    text-align: center;
+ }
+  li.menu-item a:hover,
+ li.menu-item.current-menu-item a {
+    color: #F4CA52 !important;
+    background-color: #313332;
+    text-decoration: none !important;
+ } */
+
+ /* On applique un gris plus clair sur les paragraphes */
+/* p {
+   color: #313332;
+} */
+
+/* La classe 'hover-effect' permettra de créer un effet de zoom quand l'on passera la souris par dessus les elements images enfants  */
+/* .hover-effect img {
+    transition: all 0.33s ease-in-out;
+    transform: scale(1) translateY(0px);
+ }
+ .hover-effect img:hover {
+    transition: all 0.33s ease-in-out;
+    transform: scale(1.05) translateY(-10px);
+ } */
+/* ______________FIN-COURS______________ */
+
+/* Import de la font Syne depuis Google Fonts et on l'applique sur tous les éléments de la page */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+body * {
+    font-family: 'Syne', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+#footer-bottom-inner #footer-bottom-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 0;
+}
+#footer-bottom-menu a {
+    /* font-family: Syne; */
+    font-size: 16px;
+    font-weight: 400;
+}
+#footer-bottom-menu a:hover {
+    font-size: 13px;
+    font-weight: 700;
+}
+menu-link a {
+    font-size: 16px;
+    font-weight: 400;
+}
+menu-link a:hover {
+    font-size: 16px;
+    font-weight: 700;
+}
+#menu-menu_entete .menu-link {
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #DC9F96;
+}
+.groupe_activite {
+    /* width: 1307px; */
+    /* height: 950px; */
+    /* display:flex;
+    flex-direction: column;
+    justify-content: end; */
+}
+.titre_activite {
+    position: absolute;
+    padding-top: 105px;
+    max-width: 638px;
+    text-align: center;
+    z-index: 1;
+}
+.image_activite {
+    position: relative;
+    padding-top: 83px;
+    /* z-index: 1; */
+    /* width: 1307px; */
+    /* height: 950px; */
+    /* z-index: 0; */
+}
+.rectangle_activite_blanc {
+    position: absolute;
+    top: 848px;
+    /* left: 0; */
+    z-index: 1;
+}
+.rectangle_activite_beige {
+    position: absolute;
+    top: 838px;
+    /* left: 0; */
+    /* z-index: 0; */
+}
+.titre2_activite {
+    position: absolute;
+    top: 978px;
+    /* left: 0; */
+    text-align: center;
+    z-index: 1;
+}
+.texte_activite {
+    z-index: 2;
+}
+
+/* ______________-PAGE_TEST-______________ */
+.violet {
+    background-color: blueviolet;
+    color: blueviolet;
+}
