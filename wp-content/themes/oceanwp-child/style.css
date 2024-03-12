@@ -8,6 +8,7 @@ Template: oceanwp
 Version: 1.0
 */
 
+
 /* Import de la font Syne depuis Google Fonts et on l'applique sur tous les éléments de la page */
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
 body * {
@@ -18,12 +19,24 @@ body * {
 p {
     line-height: normal;
 }
+.menu {
+    font-size: 16px;
+    font-weight: 400;
+}
+.menu:hover{
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
 /*______________-En-tête-______________*/
 #menu-menu_entete .menu-link {
     font-size: 16px;
     font-weight: 400;
     background-color: #DC9F96;
 }
+
+
 /*______________-Pied_de_page-______________*/
 #footer-bottom-inner #footer-bottom-menu {
     display: flex;
@@ -33,14 +46,7 @@ p {
     height: 60px;
     padding: 0;
 }
-.menu {
-    font-size: 16px;
-    font-weight: 400;
-}
-.menu:hover{
-    font-size: 13px;
-    font-weight: 700;
-}
+
 /* #footer-bottom-menu a {
     font-size: 16px;
     font-weight: 400;
@@ -65,8 +71,10 @@ p {
 /* .hauteur_ligne_normal {
     line-height: normal;
 } */
+
+
 /*______________-Page_Accueil-______________*/
-.titre_activite {
+.position_absolue {
     position: absolute;
 }
 .fond_blanc_incurve {
@@ -83,6 +91,8 @@ p {
     border-radius: 0 0 720px 720px / 0 0 20px 20px;
     z-index: 1;
 }
+
+
 /*______________-Page_Nous_rencontrer-______________*/
 .bordure_equipe {
     border-radius: 0 0 50% 50% / 0 0 10% 10%;
@@ -94,33 +104,93 @@ p {
     left: 143px;
 }
 .cercle_equipe {
-    /* clip-path: circle(167px); */
     border-radius: 50%;
 }
 .fond_beige {
     background-color: #ECE2DA;
 }
+
+
+/*______________-Formulaire_Nous_contacter-______________*/
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
+    background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+    margin-top: 13px;
+}
+.wpcf7-form p {
+    margin-top: 20px;
+}
 #wpcf7-f1030-p10-o1 .wpcf7-submit {
-    text-align: center;
-    width: 198px;
-    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 198px;
+    height: 55px;
     padding: 15px 0;
     font-size: 15px;
-    text-transform: none;       
+    text-transform: none;
+    text-align: center;      
     border-radius: 5px;
     border: 0;
     transition: .3s ease-in-out;
     background-color: #E0B9B4;
     margin: auto;
     margin-top: 24px;
+    margin-bottom: 50px;
 }
 #wpcf7-f1030-p10-o1 .wpcf7-submit:hover {
     background-color: #C02E44;
 }
-#wpcf7-f1030-p10-o1 label.wpcf7-form-control-wrap {
-    margin-bottom: 50px;
+.wpcf7-textarea {
+    position: relative;
+    z-index: 1;
+}
+.feuilles {
+    position: absolute;
+    bottom: 100px;
+    left: -87px;
 }
 
+
+/*______________-Responsive-______________*/
+/* @media only screen and (max-width: 768px) {
+	.titre_image_activite {
+		max-height: 700px;
+	}
+  .marge_h {
+		margin: 0 140px;
+	}
+}
+@media only screen and (max-width: 320px) {
+	.gb-container-f3fe759d h1 {
+		font-size: 20px;
+	}
+	.titre_image_activite {
+		max-height: 400px;
+	}
+  .marge_h {
+		margin: 0 260px;
+	}
+	.gb-grid-wrapper-33533c0e h3 {
+		font-size: 20px;
+	}
+	.padding_g10 {
+		padding-left: 10px;
+	}
+} */
+
+/* @media (max-width: 644px)
+{
+    .elt1
+    {
+        display: none;
+    }
+}
+@media (min-width: 645px) and (max-width: 1339px)
+{
+    .elt2
+    {
+        display: none;
+    }
+} */
