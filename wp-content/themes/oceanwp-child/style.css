@@ -23,17 +23,49 @@ p {
     font-size: 16px;
     font-weight: 400;
 }
-.menu:hover{
+.menu:hover {
     font-size: 13px;
     font-weight: 700;
 }
+.fond_blanc {
+    background-color: #FFFFFF;
+}
+.fond_beige {
+    background-color: #ECE2DA;
+}
+
+
+
 
 
 /*______________-En-tête-______________*/
-#menu-menu_entete .menu-link {
-    font-size: 16px;
-    font-weight: 400;
+/* #site-header-inner {
+
+} */
+/* Lien Nous rencontrer */
+#menu-item-19 {
+    padding: 0 60px;
+}
+#menu-item-19 a, #menu-item-admin a {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+}
+#menu-item-19 a:hover, #menu-item-admin a:hover {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+/* Lien Commander */
+#menu-item-18 {
+    padding: 0 60px;
     background-color: #DC9F96;
+}
+#menu-item-18 a {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+}
+#menu-item-admin {
+    padding-right: 60px;
 }
 
 
@@ -47,58 +79,74 @@ p {
     padding: 0;
 }
 
-/* #footer-bottom-menu a {
-    font-size: 16px;
-    font-weight: 400;
-}
-#footer-bottom-menu a:hover {
-    font-size: 13px;
-    font-weight: 700;
-} */
 
-/* #footer-bottom-menu a {
-    font-size: 16px;
-    font-weight: 400;
-} */
-/* #menu-item-71 {
-    font-size: 16px;
-    font-weight: 400;
-} */
-/* #menu-item-71:hover{
-    font-size: 13px;
-    font-weight: 700;
-} */
-/* .hauteur_ligne_normal {
-    line-height: normal;
-} */
+
 
 
 /*______________-Page_Accueil-______________*/
-.position_absolue {
-    position: absolute;
-}
 .fond_blanc_incurve {
     position: absolute;
     bottom: 0;
     z-index: 1;
 }
 .bordure_activite {
-    border-radius: 0 0 50% 50% / 0 0 10% 10%;
-    border-bottom: 10px solid #E3D9D0;
-    z-index: 1;
+    border-radius: 0 0 50% 50% / 0 0 7% 7%;
 }
 .bordure_produits {
     border-radius: 0 0 720px 720px / 0 0 20px 20px;
-    z-index: 1;
+    /* z-index: 1; */
 }
+.commander {
+    text-decoration: none !important;
+}
+/*______________-Responsive-______________*/
+@media screen and (min-width: 401px) and (max-width: 520px) {
+	.gb-container-f3fe759d h1 {
+		font-size: 24px !important;
+	}
+	.titre_image_activite {
+		max-height: 400px;
+	}
+    .image_produit {
+		margin: 0 140px;
+	}
+	.image_produit h3 {
+		font-size: 28px !important;
+        padding: 0 70px;
+	}
+	.padding_g10 {
+		padding-left: 10px;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.gb-container-f3fe759d h1 {
+		font-size: 20px;
+	}
+	.titre_image_activite {
+		max-height: 400px;
+	}
+    .image_produit {
+		margin: 0 260px;
+	}
+	.image_produit h3 {
+		font-size: 28px !important;
+        padding: 0 70px;
+	}
+	.padding_g10 {
+		padding-left: 10px;
+	}
+}
+/*____________________________-Fin_Page_Accueil-____________________________*/
+
+
+
 
 
 /*______________-Page_Nous_rencontrer-______________*/
 .bordure_equipe {
     border-radius: 0 0 50% 50% / 0 0 10% 10%;
-    z-index: 1;
 }
-.fleur {
+.image_fleur {
     position: absolute;
     top: 71px;
     left: 143px;
@@ -106,14 +154,13 @@ p {
 .cercle_equipe {
     border-radius: 50%;
 }
-.fond_beige {
-    background-color: #ECE2DA;
+.image_plante {
+    position: absolute;
+    bottom: 0;
 }
-
-
 /*______________-Formulaire_Nous_contacter-______________*/
 .wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
-    background-color: #fff;
+    background-color: #FFFFFF;
     border-radius: 7px;
     box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
     margin-top: 13px;
@@ -121,7 +168,7 @@ p {
 .wpcf7-form p {
     margin-top: 20px;
 }
-#wpcf7-f1030-p10-o1 .wpcf7-submit {
+#wpcf7-f1030-p10-o1 .wpcf7-submit, #wpcf7-f1448-p12-o1 .wpcf7-submit, #wpcf7-f1810-p12-o3 .wpcf7-submit {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,61 +183,136 @@ p {
     transition: .3s ease-in-out;
     background-color: #E0B9B4;
     margin: auto;
-    margin-top: 24px;
-    margin-bottom: 50px;
+    margin-top: 44px;
+    margin-bottom: 93px;
 }
-#wpcf7-f1030-p10-o1 .wpcf7-submit:hover {
+#wpcf7-f1030-p10-o1 .wpcf7-submit:hover, #wpcf7-f1448-p12-o1 .wpcf7-submit:hover, #wpcf7-f1810-p12-o3 .wpcf7-submit:hover {
     background-color: #C02E44;
 }
 .wpcf7-textarea {
     position: relative;
     z-index: 1;
 }
-.feuilles {
+.image_feuilles {
     position: absolute;
-    bottom: 100px;
+    bottom: 160px;
     left: -87px;
 }
+/*______________-Responsive-______________*/
+@media only screen and (max-width: 1200px) {
+    .image_fleur {
+        position: inherit;
+        margin-top: 20px;
+    }
+    .nous_rencontrer {
+        margin-top: 0px !important;
+    }
+    .image_plante {
+        display: none !important;
+    }
+}
+@media only screen and (max-width: 520px) {
+    .image_fleur {
+        max-width: 50px !important;
+    }
+    .nous_rencontrer h1 {
+        font-size: 1.2em;
+    }
+    .formulaire_nous_contacter {
+        padding: 0 20px;
+    }
+    .image_feuilles {
+        display: none !important;
+    }
+}
+/*____________________________-Fin_Page_Nous_rencontrer-____________________________*/
 
+
+
+
+/*______________-Page_Commander-______________*/
+.conteneur_produits {
+    width: 860px;
+}
+.produit {
+    flex-basis: calc(25% - 20px);
+}
+.quantite {
+    width: 100%;
+    max-width: 100%;
+    /* height: 59px; */
+}
+/*______________-Formulaire-______________*/
+/* gauche */                       /* droite */
+#wpcf7-f1461-p12-o1 .wpcf7-form p, #wpcf7-f1462-p12-o2 .wpcf7-form p {
+    color: #FFFFFF;
+}
+.saisie_commander {
+    height: 71px;
+    margin-bottom: 30px;
+}
+.email_commander, .ville_commander {
+    margin-bottom: 0;
+}
 
 /*______________-Responsive-______________*/
-/* @media only screen and (max-width: 768px) {
-	.titre_image_activite {
-		max-height: 700px;
-	}
-  .marge_h {
-		margin: 0 140px;
-	}
+@media only screen and (max-width: 880px) {
+    .conteneur_produits {
+        flex-direction: column !important;
+        align-items: center;
+        max-width: 100vh !important;
+    }
+    .produit {
+        width: 193PX;
+    }
+    .quantite_produit {
+        margin-bottom: 40px;
+    }
+    .conteneur_formulaires {
+        flex-direction: column !important;
+        align-items: center;
+    }
+    .gauche {
+        border-right: 0 !important;
+        margin-bottom: 60px;
+    }
+    .gauche, .droite {
+        padding: 0 !important;
+    }
 }
-@media only screen and (max-width: 320px) {
-	.gb-container-f3fe759d h1 {
-		font-size: 20px;
-	}
-	.titre_image_activite {
-		max-height: 400px;
-	}
-  .marge_h {
-		margin: 0 260px;
-	}
-	.gb-grid-wrapper-33533c0e h3 {
-		font-size: 20px;
-	}
-	.padding_g10 {
-		padding-left: 10px;
-	}
-} */
+@media only screen and (max-width: 768px) {
+    .titre_commander h1 {
+        font-size: 28px !important;
+    }
+    .section_commande {
+        width: 50vh;
+    }
+    .conteneur_produits {
+        width: 100%;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .gauche, .droite {
+        max-width: 40vh !important;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .titre_commander h1 {
+        font-size: 24px !important;
+    }
+    .section_commande {
+        width: 40vh;
+    }
+    .section_commande h2 {
+        font-size: 26px !important;
+    }
+    .conteneur_formulaires {
+        flex-direction: column !important;
+        align-items: center;
+    }
+    .gauche h2, .droite h2{
+        font-size: 26px !important;
+    }
+}
+/*____________________________-Fin_Page_Commander-____________________________*/
 
-/* @media (max-width: 644px)
-{
-    .elt1
-    {
-        display: none;
-    }
-}
-@media (min-width: 645px) and (max-width: 1339px)
-{
-    .elt2
-    {
-        display: none;
-    }
-} */
