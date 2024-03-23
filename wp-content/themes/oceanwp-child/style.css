@@ -100,7 +100,7 @@ p {
     text-decoration: none !important;
 }
 /*______________-Responsive-______________*/
-@media screen and (min-width: 401px) and (max-width: 520px) {
+@media only screen and (min-width: 401px) and (max-width: 520px) {
 	.gb-container-f3fe759d h1 {
 		font-size: 24px !important;
 	}
@@ -170,14 +170,14 @@ p {
 }
 #wpcf7-f1030-p10-o1 .wpcf7-submit, #wpcf7-f1448-p12-o1 .wpcf7-submit, #wpcf7-f1810-p12-o3 .wpcf7-submit {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     width: 198px;
     height: 55px;
     padding: 15px 0;
     font-size: 15px;
-    text-transform: none;
-    text-align: center;      
+    /* text-transform: none; */
+    /* text-align: center;       */
     border-radius: 5px;
     border: 0;
     transition: .3s ease-in-out;
@@ -255,6 +255,28 @@ p {
     margin-bottom: 0;
 }
 
+
+#formulaire_commander {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* display: none; */
+}
+#formulaire_gauche {
+    display: flex;
+    width: 45%;
+    /* align-self: flex-start; */
+}
+#formulaire_droite {
+    display: flex;
+    width: 45%;
+    /* align-self: flex-end; */
+}
+#bouton_commander {
+    width: 100%;
+    text-align: center;
+    /* display: none; */
+}
 /*______________-Responsive-______________*/
 @media only screen and (max-width: 880px) {
     .conteneur_produits {
@@ -316,3 +338,6 @@ p {
 }
 /*____________________________-Fin_Page_Commander-____________________________*/
 
+.test .wpcf7-submit {
+    text-align: center;
+}

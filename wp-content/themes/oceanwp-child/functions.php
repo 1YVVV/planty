@@ -21,97 +21,39 @@
  */
 
 function oceanwp_child_enqueue_parent_style() {
-
 	// Dynamically get version number of the parent stylesheet (lets browsers re-cache your stylesheet when you update the theme)
 	$theme   = wp_get_theme( 'OceanWP' );
 	$version = $theme->get( 'Version' );
-
 	// Load the stylesheet.
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'oceanwp-style' ), $version );
-	
 }
-
 add_action( 'wp_enqueue_scripts', 'oceanwp_child_enqueue_parent_style' );
 
 
-// Utilisation du hook wp_nav_menu_items pour afficher le lien Admin lorsque l'utilisateur est connecté à WordPress
-// function add_admin_link_to_menu($items) {
-//     if ( is_user_logged_in() ) { // Vérifie si l'utilisateur est connecté
-//         $items .= '<li><a href="'. admin_url('') .'">Admin</a></li>'; // Ajoute le lien "Admin" aux éléments du menu
-//     }
-//     return $items;
-// }
-// add_filter( 'wp_nav_menu_items', 'add_admin_link_to_menu');
-
-// Utilisation du hook wp_nav_menu_items pour afficher le lien Admin lorsque l'utilisateur est connecté à WordPress
-// Fonction pour modifier les éléments du menu d'en-tête
-function modifier_menu_admin($items) {
+// Création de la fonction qui sera utilisée comme fonction de rappel (callback) pour insérer le nouveau lien dans le menu
+// Fonction pour ajouter le lien Admin au menu d'en-tête et l'afficher lorsque l'utilisateur est connecté
+function ajouter_lien_admin_au_menu_entete($elements, $menu) {
     // Vérifier si l'utilisateur est connecté
-    if (is_user_logged_in() ) {
-        // Récupérer l'URL de l'administration
-        $admin_url = admin_url();
-
-        // Construire le lien Admin
-        $admin_link = '<li id="menu-item-admin"><a href="' . esc_url($admin_url) . '">Admin</a></li>';
-
-        // Diviser les éléments du menu en un tableau
-        $menu_items = explode('</li>', $items);
-
-        // Insérer le lien Admin à l'emplacement désiré (par exemple, après le premier élément)
-        array_splice($menu_items, 1, 0, $admin_link); // Insérer après le premier élément (index 0)
-
-        // Rejoindre les éléments du menu en une chaîne
-        $items = implode('</li>', $menu_items);
+    if (is_user_logged_in() && $menu->theme_location == 'main_menu') {
+        // Récupération de l'URL de l'administration
+        $url_admin = admin_url();
+        // Construction du lien Admin
+        $lien_admin = '<li id="menu-item-admin"><a href="' . esc_url($url_admin) . '">Admin</a></li>';
+        // esc_url() est une fonction native de WordPress destinée à nettoyer et à sanitariser une URL donnée.
+        // Son objectif est de s'assurer que l'URL entrée est valide et conforme aux standards,
+        // d'échapper les caractères spéciaux potentiellement malveillants et de neutraliser les risques potentiels de cross-site scripting (XSS) et d'injection SQL.
+        
+        // Division des éléments du menu en un tableau (séparateur, éléments) avec fonction explode()
+        $tableau_elements_menu = explode('</li>', $elements);
+        // Insertion du lien Admin à l'emplacement 1 (soit la 2ème position dans le tableau) avec fonction array_splice()
+        array_splice($tableau_elements_menu, 1, 0, $lien_admin);
+        // Reconversion du tableau en chaîne de caratères avec fonction implode()
+        $elements = implode('</li>', $tableau_elements_menu);
     }
-    return $items;
+    return $elements;
 }
-add_filter('wp_nav_menu_items', 'modifier_menu_admin', 10, 2);
-
-
-
-
-// Hook wpcf7_mail_sent de Contact Form 7 pour déclencher la soumission du formulaire droit après l'envoi du gauche
-// add_action('wpcf7_mail_sent', 'envoi_formulaires', 10, 1);
-
-// function envoi_formulaires($formulaire_commande)
-// {
-//     $id_gauche = 'bccf6a7';
-//     $id_droite = 'ab70392';
-// 	$id_bouton = '7765998';
-
-//     if ($formulaire_commande->id() == $id_bouton) {
-//         $formulaire_gauche = WPCF7_ContactForm::get_instance($id_gauche);
-//         $formulaire_droite = WPCF7_ContactForm::get_instance($id_droite);
-
-//         if ($formulaire_gauche && $formulaire_droite) {
-//             $envoi = WPCF7_Submission::get_instance();
-
-//             if ($envoi) {
-//                 $donnees_gauche = $envoi->get_posted_data($formulaire_gauche);
-//                 $donnees_droite = $envoi->get_posted_data($formulaire_droite);
-// 				$donnees_bouton = $envoi->get_posted_data($formulaire_commande);
-               
-//                 // Vérifier si tous les champs sont remplis
-//                 if (empty($donnees_gauche['nom']) || empty($donnees_gauche['prenom']) || empty($donnees_gauche['email']) ||
-//                     empty($second_data['adresse']) || empty($second_data['code_postal']) || empty($second_data['ville'])) {
-//                     $donnees_valides = false;
-//                     $formulaire_commande->add_feedback("Veuillez remplir tous les champs.", 'error');
-//                 }
-
-//                 if (!$donnees_valides) {
-//                     // Empêcher l'envoi du troisième formulaire s'il manque des données dans les deux premiers formulaires
-//                     $contact_form->skip_mail = true;
-//                 }
-// 				else {
-// 					$donnees_valides = true;
-// 					$formulaire_gauche->set_properties(array('posted_data' => $donnees_gauche));
-//                     $formulaire_gauche->submit();
-//                     $formulaire_droite->set_properties(array('posted_data' => $donnees_droite));
-//                     $formulaire_droite->submit();
-// 				}
-
-//             }
-//         }
-//     }
-// }
+// Utilisation du hook wp_nav_menu_items pour exécuter la fonction
+// Le crochet wp_nav_menu_items accepte la fonction de rappel en tant qu'argument
+// et est appelé chaque fois que la fonction wp_nav_menu() est utilisée pour afficher un menu.
+add_filter('wp_nav_menu_items', 'ajouter_lien_admin_au_menu_entete', 10, 2);
 
