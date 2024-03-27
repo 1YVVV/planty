@@ -29,12 +29,17 @@ function oceanwp_child_enqueue_parent_style() {
 }
 add_action( 'wp_enqueue_scripts', 'oceanwp_child_enqueue_parent_style' );
 
-
 // Création de la fonction qui sera utilisée comme fonction de rappel (callback) pour insérer le nouveau lien dans le menu
 // Fonction pour ajouter le lien Admin au menu d'en-tête et l'afficher lorsque l'utilisateur est connecté
 function ajouter_lien_admin_au_menu_entete($elements, $menu) {
-    // Vérifier si l'utilisateur est connecté
-    if (is_user_logged_in() && $menu->theme_location == 'main_menu') {
+
+    // Vérification de connexion de l'utilisateur
+    if ((is_user_logged_in() && $menu->theme_location == 'main_menu') || (is_user_logged_in() && $menu->theme_location == 'mobile_menu')) {
+        
+        // Récupération des éléments du menu
+        // $location = get_nav_menu_locations();
+        // print_r($location);
+
         // Récupération de l'URL de l'administration
         $url_admin = admin_url();
         // Construction du lien Admin
@@ -56,4 +61,3 @@ function ajouter_lien_admin_au_menu_entete($elements, $menu) {
 // Le crochet wp_nav_menu_items accepte la fonction de rappel en tant qu'argument
 // et est appelé chaque fois que la fonction wp_nav_menu() est utilisée pour afficher un menu.
 add_filter('wp_nav_menu_items', 'ajouter_lien_admin_au_menu_entete', 10, 2);
-

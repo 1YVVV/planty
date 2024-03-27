@@ -19,29 +19,23 @@ body * {
 p {
     line-height: normal;
 }
-.menu {
-    font-size: 16px;
-    font-weight: 400;
-}
-.menu:hover {
-    font-size: 13px;
-    font-weight: 700;
-}
 .fond_blanc {
     background-color: #FFFFFF;
 }
 .fond_beige {
     background-color: #ECE2DA;
 }
-
-
+/*______________-Formulaires-______________*/
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
+    margin-top: 13px;
+    border-radius: 7px;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
+    background-color: #FFFFFF;
+}
 
 
 
 /*______________-En-tête-______________*/
-/* #site-header-inner {
-
-} */
 /* Lien Nous rencontrer */
 #menu-item-19 {
     padding: 0 60px;
@@ -56,7 +50,6 @@ p {
 }
 /* Lien Commander */
 #menu-item-18 {
-    padding: 0 60px;
     background-color: #DC9F96;
 }
 #menu-item-18 a {
@@ -64,9 +57,17 @@ p {
     font-weight: 700 !important;
     color: #FFFFFF !important;
 }
+#menu-item-18 span {
+    padding: 0 60px;
+}
+#menu-item-18:hover {
+    transition: .3s ease-in-out;
+    background-color: #C02E44;
+}
 #menu-item-admin {
     padding-right: 60px;
 }
+
 
 
 /*______________-Pied_de_page-______________*/
@@ -78,34 +79,54 @@ p {
     height: 60px;
     padding: 0;
 }
-
-
+.menu {
+    font-size: 16px;
+    font-weight: 400;
+}
+.menu:hover {
+    font-size: 13px;
+    font-weight: 700;
+}
 
 
 
 /*______________-Page_Accueil-______________*/
-.fond_blanc_incurve {
-    position: absolute;
-    bottom: 0;
-    z-index: 1;
-}
 .bordure_activite {
     border-radius: 0 0 50% 50% / 0 0 7% 7%;
 }
 .bordure_produits {
     border-radius: 0 0 720px 720px / 0 0 20px 20px;
-    /* z-index: 1; */
 }
 .commander {
     text-decoration: none !important;
+    width: 198px;
+    height: 55px;
 }
 /*______________-Responsive-______________*/
+@media only screen and (max-width: 1090px) {
+    .section_clients {
+        width: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media only screen and (min-width: 521px) and (max-width: 860px) {
+    .bordure_produits {
+        padding: 0 20px;
+    }
+}
 @media only screen and (min-width: 401px) and (max-width: 520px) {
+    .fond_beige_fonce {
+        height: 510px !important;
+    }
+    .fond_beige_clair {
+        height: 500px !important;
+    }
+    .image_activite {
+        height: 500px !important;
+    }
 	.gb-container-f3fe759d h1 {
 		font-size: 24px !important;
-	}
-	.titre_image_activite {
-		max-height: 400px;
 	}
     .image_produit {
 		margin: 0 140px;
@@ -114,16 +135,24 @@ p {
 		font-size: 28px !important;
         padding: 0 70px;
 	}
-	.padding_g10 {
+	.section_clients {
 		padding-left: 10px;
 	}
 }
 @media only screen and (max-width: 400px) {
+    .fond_beige_fonce {
+        height: 410px !important;
+    }
+    .fond_beige_clair {
+        height: 400px !important;
+        padding-top: 60px !important;
+    }
+    .image_activite {
+        height: 460px !important;
+    }
 	.gb-container-f3fe759d h1 {
 		font-size: 20px;
-	}
-	.titre_image_activite {
-		max-height: 400px;
+        padding-top: 0 !important;
 	}
     .image_produit {
 		margin: 0 260px;
@@ -132,13 +161,17 @@ p {
 		font-size: 28px !important;
         padding: 0 70px;
 	}
-	.padding_g10 {
-		padding-left: 10px;
+	.section_clients {
+        width: 100vh !important;
+		padding: 0 10px !important;
 	}
 }
+@media only screen and (max-width: 360px) {
+    .masque {
+        display: none;
+    }
+}
 /*____________________________-Fin_Page_Accueil-____________________________*/
-
-
 
 
 
@@ -159,35 +192,18 @@ p {
     bottom: 0;
 }
 /*______________-Formulaire_Nous_contacter-______________*/
-.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 textarea {
-    background-color: #FFFFFF;
-    border-radius: 7px;
-    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.04);
-    margin-top: 13px;
+.formulaire_nous_contacter {
+    max-width: 383px;
+    margin: 0;
+    padding: 0;
 }
-.wpcf7-form p {
-    margin-top: 20px;
+.saisie_nous_contacter {
+    height: 71px;
+    margin-bottom: 22px;
 }
-#wpcf7-f1030-p10-o1 .wpcf7-submit, #wpcf7-f1448-p12-o1 .wpcf7-submit, #wpcf7-f1810-p12-o3 .wpcf7-submit {
-    display: flex;
-    /* justify-content: center;
-    align-items: center; */
-    width: 198px;
-    height: 55px;
-    padding: 15px 0;
-    font-size: 15px;
-    /* text-transform: none; */
-    /* text-align: center;       */
-    border-radius: 5px;
-    border: 0;
-    transition: .3s ease-in-out;
-    background-color: #E0B9B4;
-    margin: auto;
-    margin-top: 44px;
-    margin-bottom: 93px;
-}
-#wpcf7-f1030-p10-o1 .wpcf7-submit:hover, #wpcf7-f1448-p12-o1 .wpcf7-submit:hover, #wpcf7-f1810-p12-o3 .wpcf7-submit:hover {
-    background-color: #C02E44;
+.message {
+    height: 237px;
+    margin-bottom: 0;
 }
 .wpcf7-textarea {
     position: relative;
@@ -195,9 +211,34 @@ p {
 }
 .image_feuilles {
     position: absolute;
-    bottom: 160px;
+    bottom: 90px;
     left: -87px;
 }
+#wpcf7-f1030-p10-o1 .wpcf7-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 198px;
+    height: 55px;
+    padding: 9px 0;
+    font-size: 15px;
+    text-transform: none;
+    text-align: center;      
+    border-radius: 5px;
+    border: 0;
+    transition: .3s ease-in-out;
+    background-color: #E0B9B4;
+    margin: auto;
+    margin-top: 24px;
+    margin-bottom: 73px;
+}
+#wpcf7-f1030-p10-o1 .wpcf7-submit:hover {
+    background-color: #C02E44;
+}
+.wpcf7-spinner {
+    display: none;
+}
+
 /*______________-Responsive-______________*/
 @media only screen and (max-width: 1200px) {
     .image_fleur {
@@ -229,7 +270,6 @@ p {
 
 
 
-
 /*______________-Page_Commander-______________*/
 .conteneur_produits {
     width: 860px;
@@ -240,12 +280,22 @@ p {
 .quantite {
     width: 100%;
     max-width: 100%;
-    /* height: 59px; */
+    border: 0;
+    outline: none;
+    text-align: center;
 }
-/*______________-Formulaire-______________*/
-/* gauche */                       /* droite */
-#wpcf7-f1461-p12-o1 .wpcf7-form p, #wpcf7-f1462-p12-o2 .wpcf7-form p {
-    color: #FFFFFF;
+/*______________-Formulaire_commander-______________*/
+.droite {
+    width: 428px;
+    border-left: 1px solid #FFFFFF;
+}
+.formulaire_gauche {
+    max-width: 383px;
+    margin-right: 45px;
+}
+.formulaire_droite {
+    max-width: 383px;
+    margin-left: 45px;
 }
 .saisie_commander {
     height: 71px;
@@ -254,28 +304,38 @@ p {
 .email_commander, .ville_commander {
     margin-bottom: 0;
 }
-
-
 #formulaire_commander {
     display: flex;
     justify-content: center;
     width: 100%;
+    color: #FFFFFF;
     /* display: none; */
 }
-#formulaire_gauche {
-    display: flex;
-    width: 45%;
-    /* align-self: flex-start; */
+#formulaire_commander h2 {
+    margin-bottom: 30px;
+    color: #FFFFFF;
 }
-#formulaire_droite {
+
+#bouton_commander .wpcf7-submit {
     display: flex;
-    width: 45%;
-    /* align-self: flex-end; */
+    justify-content: center;
+    align-items: center;
+    width: 198px;
+    height: 55px;
+    padding: 9px 0;
+    font-size: 15px;
+    text-transform: none;
+    text-align: center;      
+    border-radius: 5px;
+    border: 0;
+    transition: .3s ease-in-out;
+    background-color: #E0B9B4;
+    margin: auto;
+    margin-top: 44px;
+    margin-bottom: 93px;
 }
-#bouton_commander {
-    width: 100%;
-    text-align: center;
-    /* display: none; */
+#bouton_commander .wpcf7-submit:hover {
+    background-color: #C02E44;
 }
 /*______________-Responsive-______________*/
 @media only screen and (max-width: 880px) {
@@ -290,16 +350,24 @@ p {
     .quantite_produit {
         margin-bottom: 40px;
     }
-    .conteneur_formulaires {
+    #formulaire_commander {
         flex-direction: column !important;
         align-items: center;
+        justify-content: center;
     }
     .gauche {
-        border-right: 0 !important;
+        display: flex;
+        justify-content: center;
         margin-bottom: 60px;
     }
-    .gauche, .droite {
+    .droite {
+        display: flex;
+        justify-content: center;
+        border: 0;
+    }
+    .formulaire_gauche, .formulaire_droite {
         padding: 0 !important;
+        margin: 0 !important;
     }
 }
 @media only screen and (max-width: 768px) {
@@ -337,7 +405,3 @@ p {
     }
 }
 /*____________________________-Fin_Page_Commander-____________________________*/
-
-.test .wpcf7-submit {
-    text-align: center;
-}
