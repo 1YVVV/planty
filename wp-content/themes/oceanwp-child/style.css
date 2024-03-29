@@ -8,6 +8,8 @@ Template: oceanwp
 Version: 1.0
 */
 
+/* Le nom du Template doit correspondre au Text Domain du thème parent pour que le lien d'héritage soit effectué
+
 
 /* Import de la font Syne depuis Google Fonts et on l'applique sur tous les éléments de la page */
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
@@ -271,11 +273,17 @@ p {
 
 
 /*______________-Page_Commander-______________*/
+.section_commande {
+    width: 100%;
+}
 .conteneur_produits {
-    width: 860px;
+    /* width: 860px; */
+    width: 100%;
 }
 .produit {
-    flex-basis: calc(25% - 20px);
+    display: flex;
+    justify-content: space-between;
+    width: 22.5%;
 }
 .quantite {
     width: 100%;
@@ -285,13 +293,46 @@ p {
     text-align: center;
 }
 /*______________-Formulaire_commander-______________*/
-.droite {
-    width: 428px;
-    border-left: 1px solid #FFFFFF;
+#formulaire_commander {
+    display: flex;
+    flex-direction: column;
+}
+.saisie_quantites {
+    display: flex !important;
+    justify-content: space-between;
+    border-bottom: 1px solid #FFFFFF;
+}
+.conteneur_produit {
+    display: flex;
+    justify-content: center;
+    width: 22.5%;
+    padding-bottom: 40px;
+}
+.quantite_produit {
+    width: 39px !important;
+    height: 56px !important;
+    border-radius: 0% !important;
+    text-align: center;
+}
+.formulaire_commander {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #FFFFFF;
+    margin-top: 53px;
+}
+.formulaire_commander h2 {
+    margin-bottom: 30px;
+    color: #FFFFFF;
 }
 .formulaire_gauche {
     max-width: 383px;
     margin-right: 45px;
+}
+.droite {
+    width: 428px;
+    border-left: 1px solid #FFFFFF;
+    box-sizing: border-box;
 }
 .formulaire_droite {
     max-width: 383px;
@@ -304,18 +345,6 @@ p {
 .email_commander, .ville_commander {
     margin-bottom: 0;
 }
-#formulaire_commander {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    color: #FFFFFF;
-    /* display: none; */
-}
-#formulaire_commander h2 {
-    margin-bottom: 30px;
-    color: #FFFFFF;
-}
-
 #bouton_commander .wpcf7-submit {
     display: flex;
     justify-content: center;
@@ -339,18 +368,18 @@ p {
 }
 /*______________-Responsive-______________*/
 @media only screen and (max-width: 880px) {
-    .conteneur_produits {
-        flex-direction: column !important;
+    .section_commande {
         align-items: center;
-        max-width: 100vh !important;
     }
-    .produit {
-        width: 193PX;
+    .titre_produit {
+        width: 100%;
+        text-align: center;
+         /* line-height: 100%; */
     }
-    .quantite_produit {
-        margin-bottom: 40px;
+    .titre_produit h3 {
+        font-size: 1.5rem;
     }
-    #formulaire_commander {
+    .formulaire_commander {
         flex-direction: column !important;
         align-items: center;
         justify-content: center;
@@ -369,39 +398,33 @@ p {
         padding: 0 !important;
         margin: 0 !important;
     }
-}
-@media only screen and (max-width: 768px) {
-    .titre_commander h1 {
-        font-size: 28px !important;
-    }
-    .section_commande {
-        width: 50vh;
-    }
-    .conteneur_produits {
-        width: 100%;
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-    .gauche, .droite {
-        max-width: 40vh !important;
+    .formulaire_gauche h2, .formulaire_droite h2{
+        text-align: center;
     }
 }
 @media only screen and (max-width: 500px) {
     .titre_commander h1 {
-        font-size: 24px !important;
+        font-size: 26px !important;
     }
     .section_commande {
-        width: 40vh;
+        padding: 0 10px;
     }
     .section_commande h2 {
-        font-size: 26px !important;
+        font-size: 22px !important;
+        text-align: center !important;
+    }
+    .saisie_quantites {
+        padding: 0 10px;
     }
     .conteneur_formulaires {
         flex-direction: column !important;
         align-items: center;
     }
+    .gauche, .droite {
+        max-width: 40vh !important;
+    }
     .gauche h2, .droite h2{
-        font-size: 26px !important;
+        font-size: 22px !important;
     }
 }
 /*____________________________-Fin_Page_Commander-____________________________*/
